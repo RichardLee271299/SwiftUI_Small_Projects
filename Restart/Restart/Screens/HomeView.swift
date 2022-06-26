@@ -55,6 +55,9 @@ struct HomeView: View {
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
+            .opacity(isAnimating ? 1 : 0)
+            .offset(y: isAnimating ? 0 : 40)
+            .animation(.easeOut(duration: 0.8), value: isAnimating)
         } //VStack
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
