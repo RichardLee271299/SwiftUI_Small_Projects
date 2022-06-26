@@ -12,6 +12,7 @@ struct HomeView: View {
     @AppStorage("onboarding") var isOnboardngViewActive: Bool = false
     
     @State private var isAnimating: Bool = false
+
     
     //MARK: - Body
     var body: some View {
@@ -42,6 +43,7 @@ struct HomeView: View {
             
             Button(action: {
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnboardngViewActive = true
                 }
             }) {
