@@ -14,12 +14,19 @@ struct ContentView: View {
     @State private var imageOffset: CGSize = .zero
     @State private var isDrawerOpen: Bool = false
     
+    let pages: [Page] = pagesData
+    @State private var pageIndex: Int = 1
+    
     //MARK: - Func
     private func resetImageState() {
         withAnimation(.spring()) {
             imageScale = 1
             imageOffset = .zero
         }
+    }
+    
+    private func  currentPage() -> String {
+        return pages[pageIndex - 1].imageName
     }
     
     //MARK: - Content
@@ -29,13 +36,14 @@ struct ContentView: View {
                 Color.clear
                 
                 //MARK: - Page Image
-                Image("magazine-front-cover")
+                Image(currentPage())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
                     .padding()
                     .shadow(color: .black.opacity(0.2), radius: 12, x: 2, y: 2)
                     .opacity(isAnimation ? 1 : 0)
+                    .animation(.linear(duration: 1), value: isAnimation)
                     .offset(x: imageOffset.width, y: imageOffset.height)
                     .scaleEffect(imageScale)
                 
@@ -90,10 +98,9 @@ struct ContentView: View {
             .navigationTitle("Pinch and Zoom")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                withAnimation(.linear(duration: 1)) {
                     isAnimation = true
-                }
             }
+
             
             //MARK: - Info Panel
             .overlay(alignment: .top) {
@@ -170,6 +177,20 @@ struct ContentView: View {
                             }
                         }
                     //MARK: - Thumbnails
+                    
+                    ForEach(pages) { item in
+                        Image(item.thumbnailName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .opacity(isDrawerOpen ? 1 : 0)
+                            .animation(.easeOut(duration: 0.5), value: isDrawerOpen)
+                            .onTapGesture {
+                                pageIndex = item.id
+                            }
+                    }
                     Spacer()
                 }
                 .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
@@ -180,7 +201,7 @@ struct ContentView: View {
                 .padding(.top, UIScreen.main.bounds.height / 12)
                 .offset(x: isDrawerOpen ? 20 : 215)
             } // Drawer
-  
+            
         }//Navigation
         .navigationViewStyle(.stack)
     }
