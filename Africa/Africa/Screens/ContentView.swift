@@ -27,6 +27,7 @@ struct ContentView: View {
           .navigationTitle("Africa")
           .navigationBarTitleDisplayMode(.large)
        } //NAVIGATION
+       .navigationViewStyle(.stack)
     }
 }
 //MARK: -  Preview
