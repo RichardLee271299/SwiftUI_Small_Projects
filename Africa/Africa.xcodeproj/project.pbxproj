@@ -201,7 +201,7 @@
 				49D2951C2877331900B38563 /* MainScreen */,
 				49D2951E2877333E00B38563 /* DetailScreen */,
 				4961ACF22878A19B0007EF02 /* VideoListScreen */,
-				49A3E3EC2881D62A00D7BF5D /* MotionAnimationView.swift */,
+				49A3E3EE2881DB4800D7BF5D /* GalleryScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +274,14 @@
 				4994E10C2879AFDD0073CD8C /* MapAnnotaionView.swift */,
 			);
 			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		49A3E3EE2881DB4800D7BF5D /* GalleryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				49A3E3EC2881D62A00D7BF5D /* MotionAnimationView.swift */,
+			);
+			path = GalleryScreen;
 			sourceTree = "<group>";
 		};
 		49D2951C2877331900B38563 /* MainScreen */ = {
