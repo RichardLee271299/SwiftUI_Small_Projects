@@ -26,7 +26,17 @@ struct ContentView: View {
                FeaturedTabView()
                   .frame(height: UIScreen.main.bounds.width / 1.5) // This will fix the layout rendering priority issue by using the screen's aspect ratio.
                   .padding(.vertical, 20)
+               
                CategoryGridView()
+               LazyVGrid(columns: gridLayout, spacing: 15) {
+                  ForEach(products) { product in
+                     ProductItemView(product: product)
+                  }//LOOP
+               }//GRID
+               .padding(15)
+               
+               TitleView(title: "Helmets")
+               
                FooterView()
                   .padding(.horizontal)
             }
@@ -42,5 +52,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
    static var previews: some View {
       ContentView()
+         
    }
 }
