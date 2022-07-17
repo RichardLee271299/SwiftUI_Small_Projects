@@ -15,6 +15,7 @@ struct QuantityFavoriteDetailView: View {
     var body: some View {
        HStack(alignment: .center, spacing: 6) {
           Button {
+             feedback.impactOccurred()
              if counter > 0 {
                 counter -= 1
              }
@@ -25,6 +26,7 @@ struct QuantityFavoriteDetailView: View {
              .fontWeight(.semibold)
              .frame(minWidth:36)
           Button {
+             feedback.impactOccurred()
              counter += 1
           } label: {
              Image(systemName: "plus.circle")
@@ -33,6 +35,7 @@ struct QuantityFavoriteDetailView: View {
           Spacer()
           
           Button {
+             feedback.impactOccurred()
              favorite.toggle()
           } label: {
              Image(systemName: "heart.circle")

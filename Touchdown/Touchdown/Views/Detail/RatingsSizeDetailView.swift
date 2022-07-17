@@ -24,7 +24,7 @@ struct RatingsSizeDetailView: View {
             HStack(alignment: .center, spacing: 3) {
                ForEach(1...5, id: \.self) { item in
                   Button {
-                     //
+                     feedback.impactOccurred()
                   } label: {
                      Image(systemName: "star.fill")
                         .frame(width: 28, height: 28, alignment: .center)
@@ -48,7 +48,7 @@ struct RatingsSizeDetailView: View {
             HStack(alignment: .center, spacing: 3) {
                ForEach(sizes, id: \.self) { size in
                   Button {
-                     
+                     feedback.impactOccurred()
                   } label: {
                      Text(size)
                         .font(.footnote)
