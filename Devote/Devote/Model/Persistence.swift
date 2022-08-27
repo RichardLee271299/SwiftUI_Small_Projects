@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  Devote
 //
-//  Created by Kirill Sytkov on 18.07.2022.
+//  Created by Kirill Sytkov on 27.08.2022.
 //
 
 import CoreData
