@@ -11,10 +11,8 @@ import CoreData
 struct ContentView: View {
    //MARK: - Properties
    @State var task: String = ""
+   @State private var showNewTaskItem = false
    
-   private var isButtonDisabled: Bool {
-      task.isEmpty
-   }
    
    //Fetching data
    @Environment(\.managedObjectContext) private var viewContext
@@ -28,30 +26,28 @@ struct ContentView: View {
    var body: some View {
       NavigationView {
          ZStack {
+            //MARK: - Main view
             VStack {
-               VStack(spacing: 16) {
-                  TextField("New Task", text: $task)
-                     .padding()
-                     .background(
-                        Color(UIColor.systemGray6)
-                     )
-                     .cornerRadius(10)
-                  Button {
-                     addItem()
-                  } label: {
-                     Spacer()
-                     Text("Save")
-                     Spacer()
-                  }
-                  .disabled(isButtonDisabled)
-                  .padding()
-                  .font(.headline)
-                  .foregroundColor(.white)
-                  .background(isButtonDisabled ? Color.gray : Color.pink)
-                  .cornerRadius(10)
-               }//VSTACK
-               .padding()
+               //MARK: - Header
+               Spacer(minLength: 80)
                
+               //MARK: - New Task Button
+               Button {
+                  showNewTaskItem = true
+               } label: {
+                  Image(systemName: "plus.circle")
+                     .font(.system(size: 30, weight: .semibold, design: .rounded))
+                  Text("New Task")
+                     .font(.system(size: 24, weight: .bold, design: .rounded))
+               }
+               .foregroundColor(.white)
+               .padding(.horizontal, 20)
+               .padding(.vertical, 15)
+               .background(LinearGradient(gradient: Gradient(colors: [.pink, .blue]), startPoint: .leading, endPoint: .trailing)
+                  .clipShape(Capsule()))
+               .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 4)
+               
+               //MARK: - Tasks
                List {
                   ForEach(items) { item in
                      NavigationLink {
@@ -75,10 +71,22 @@ struct ContentView: View {
                   .onDelete(perform: deleteItems)
                } //List
                .listStyle(InsetGroupedListStyle())
-               .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+               .shadow(color: .black.opacity(0.3), radius: 12)
                .padding(.vertical, 0)
                .frame(maxWidth: 640)
             } // VStack
+            
+            //MARK: - New task Item
+            if showNewTaskItem {
+               BlankView()
+                  .onTapGesture {
+                     withAnimation {
+                        showNewTaskItem = false
+                     }
+                  }
+               NewTaskItemView(isShowing: $showNewTaskItem)
+            }
+            
          }//ZStack
          .onAppear() {
             UITableView.appearance().backgroundColor = UIColor.clear
@@ -101,23 +109,7 @@ struct ContentView: View {
    }
    
    //MARK: - Func
-   private func addItem() {
-      withAnimation {
-         let newItem = Item(context: viewContext)
-         newItem.timestamp = Date()
-         newItem.task = task
-         newItem.completion = false
-         newItem.id = UUID()
-         do {
-            try viewContext.save()
-         } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-         }
-         task = ""
-         hideKeyboard()
-      }
-   }
+ 
    
    private func deleteItems(offsets: IndexSet) {
       withAnimation {
