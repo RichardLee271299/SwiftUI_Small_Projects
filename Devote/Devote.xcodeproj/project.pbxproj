@@ -69,13 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				496EF91E28BA80C50027FC08 /* Info.plist */,
+				496EF90428BA7F850027FC08 /* DevoteApp.swift */,
 				496EF91928BA804E0027FC08 /* View */,
 				496EF91D28BA80730027FC08 /* Model */,
 				496EF91C28BA805F0027FC08 /* Style */,
 				496EF91B28BA805A0027FC08 /* Utility */,
 				496EF91A28BA80560027FC08 /* Extension */,
 				496EF91728BA80280027FC08 /* Sound */,
-				496EF90428BA7F850027FC08 /* DevoteApp.swift */,
 				496EF90828BA7F850027FC08 /* Assets.xcassets */,
 				496EF90A28BA7F850027FC08 /* Preview Content */,
 			);

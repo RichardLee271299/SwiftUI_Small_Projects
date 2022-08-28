@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
    //MARK: - Properties
+   @AppStorage("isDarkMode") private var isDarkMode = false
    @State var task: String = ""
    @State private var showNewTaskItem = false
    
@@ -29,6 +30,35 @@ struct ContentView: View {
             //MARK: - Main view
             VStack {
                //MARK: - Header
+               HStack(spacing: 10) {
+                  //title
+                  Text("Devote")
+                     .font(.system(.largeTitle, design: .rounded))
+                     .fontWeight(.heavy)
+                     .padding(.leading, 4)
+                  Spacer()
+                  
+                  //edit button
+                  EditButton()
+                     .font(.system(size: 16, weight: .semibold, design: .rounded))
+                     .padding(.horizontal, 10)
+                     .frame(minWidth: 70, minHeight: 24)
+                     .background(Capsule().stroke(Color.white, lineWidth: 2))
+            
+                  //apperience button
+                  Button {
+                     isDarkMode.toggle()
+                  } label: {
+                     Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .font(.system(.title, design: .rounded))
+                  }
+
+                  
+               }// hstack
+               .padding()
+               .foregroundColor(.white)
                Spacer(minLength: 80)
                
                //MARK: - New Task Button
@@ -93,11 +123,7 @@ struct ContentView: View {
          }
          .navigationTitle("Daily Tasks")
          .navigationBarTitleDisplayMode(.large)
-         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-               EditButton()
-            }
-         }// Toolbar
+         .navigationBarHidden(true)
          .background(
             BackgroundImageView()
          )
