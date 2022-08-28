@@ -44,17 +44,19 @@ struct ContentView: View {
                      .padding(.horizontal, 10)
                      .frame(minWidth: 70, minHeight: 24)
                      .background(Capsule().stroke(Color.white, lineWidth: 2))
-            
+                  
                   //apperience button
                   Button {
                      isDarkMode.toggle()
+                     playSound(sound: "sound-tap", type: "mp3")
+                     feedback.notificationOccurred(.success )
                   } label: {
                      Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
                         .resizable()
                         .frame(width: 24, height: 24)
                         .font(.system(.title, design: .rounded))
                   }
-
+                  
                   
                }// hstack
                .padding()
@@ -64,6 +66,8 @@ struct ContentView: View {
                //MARK: - New Task Button
                Button {
                   showNewTaskItem = true
+                  playSound(sound: "sound-ding", type: "mp3")
+                  feedback.notificationOccurred(.success )
                } label: {
                   Image(systemName: "plus.circle")
                      .font(.system(size: 30, weight: .semibold, design: .rounded))
@@ -92,7 +96,7 @@ struct ContentView: View {
             .blur(radius: showNewTaskItem ? 8 : 0, opaque: false)
             .animation(.easeOut(duration: 0.5 ))
             .transition(.move(edge: .bottom))
-
+            
             
             //MARK: - New task Item
             if showNewTaskItem {
@@ -124,7 +128,7 @@ struct ContentView: View {
    }
    
    //MARK: - Func
- 
+   
    
    private func deleteItems(offsets: IndexSet) {
       withAnimation {

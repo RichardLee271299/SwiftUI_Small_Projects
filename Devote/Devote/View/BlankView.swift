@@ -19,7 +19,6 @@ struct BlankView: View {
        .background(backgroundColor)
        .opacity(backgroundOpacity)
        .blendMode(.overlay)
-       
        .edgesIgnoringSafeArea(.all)
     }
 }
