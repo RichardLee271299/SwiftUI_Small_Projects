@@ -16,6 +16,7 @@
 		499B19D528BD3663008E54A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499B19D428BD3663008E54A6 /* Assets.xcassets */; };
 		499B19D828BD3663008E54A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499B19D728BD3663008E54A6 /* Preview Assets.xcassets */; };
 		499B19EA28BD3A65008E54A6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B19E928BD3A65008E54A6 /* Note.swift */; };
+		49A0BA8828BE2C080003D9E6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0BA8728BE2C080003D9E6 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		499B19D728BD3663008E54A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		499B19D928BD3663008E54A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499B19E928BD3A65008E54A6 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		49A0BA8728BE2C080003D9E6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				499B19CE28BD3662008E54A6 /* ContentView.swift */,
+				49A0BA8728BE2C080003D9E6 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				499B19CF28BD3662008E54A6 /* ContentView.swift in Sources */,
 				499B19D128BD3662008E54A6 /* NotesApp.swift in Sources */,
 				499B19D328BD3662008E54A6 /* ComplicationController.swift in Sources */,
+				49A0BA8828BE2C080003D9E6 /* DetailView.swift in Sources */,
 				499B19EA28BD3A65008E54A6 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
