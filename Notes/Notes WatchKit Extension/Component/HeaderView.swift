@@ -14,15 +14,13 @@ struct HeaderView: View {
    //MARK: - Body
     var body: some View {
        VStack {
-          // Title
           if title != "" {
              Text(title.uppercased())
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundColor(.accentColor) 
           }
-          
-          //Separator
+
           HStack {
              Capsule()
                 .frame(height:1)

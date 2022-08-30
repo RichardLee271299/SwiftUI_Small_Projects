@@ -14,14 +14,14 @@ struct CreditsView: View {
    //MARK: - Body
    var body: some View {
       VStack(spacing: 3) {
-         // profile image
+
          Image("developer-no1")
             .resizable()
             .scaledToFit()
             .layoutPriority(1)
-         //header
+
          HeaderView(title: "Credits")
-         //content
+
          Text("Kirill Sytkov")
             .foregroundColor(.primary)
             .fontWeight(.bold)

@@ -14,15 +14,13 @@ struct DetailView: View {
    let index: Int
    
    @State private var isCreditsPresented = false
-   
+   @State private var isSettingsPresented = false
    //MARK: - Body
     var body: some View {
        
        VStack(alignment: .center, spacing: 3) {
-          //header
           HeaderView(title: "")
-          
-          //content
+
           Spacer()
           ScrollView(.vertical) {
              Text(note.text)
@@ -31,11 +29,16 @@ struct DetailView: View {
                 .multilineTextAlignment(.center)
           }
           Spacer()
-          
-          //footer
+
           HStack(alignment: .center) {
              Image(systemName: "gear")
                 .imageScale(.large)
+                .onTapGesture {
+                   isSettingsPresented.toggle()
+                }
+                .sheet(isPresented: $isSettingsPresented) {
+                   SettingsView()
+                }
              
              Spacer()
              
