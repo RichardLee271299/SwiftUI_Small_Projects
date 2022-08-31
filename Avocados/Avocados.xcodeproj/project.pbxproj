@@ -32,6 +32,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4968BA0128BFC3E700F7BD65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4998492428BFBEF900C08EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +61,7 @@
 				4998493028BFBEF900C08EE7 /* AvocadosApp.swift */,
 				4998493228BFBEF900C08EE7 /* ContentView.swift */,
 				4998493428BFBEFB00C08EE7 /* Assets.xcassets */,
+				4968BA0128BFC3E700F7BD65 /* View */,
 				4998493628BFBEFB00C08EE7 /* Preview Content */,
 			);
 			path = Avocados;
