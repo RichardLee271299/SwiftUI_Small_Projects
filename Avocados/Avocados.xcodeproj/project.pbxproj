@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49680E3028C0B44A00AA78C4 /* AvocadosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49680E2F28C0B44A00AA78C4 /* AvocadosView.swift */; };
+		49680E3228C0B46000AA78C4 /* RipeningStagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49680E3128C0B46000AA78C4 /* RipeningStagesView.swift */; };
+		49680E3428C0B47700AA78C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49680E3328C0B47700AA78C4 /* SettingsView.swift */; };
 		4998493128BFBEF900C08EE7 /* AvocadosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998493028BFBEF900C08EE7 /* AvocadosApp.swift */; };
 		4998493328BFBEF900C08EE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998493228BFBEF900C08EE7 /* ContentView.swift */; };
 		4998493528BFBEFB00C08EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4998493428BFBEFB00C08EE7 /* Assets.xcassets */; };
@@ -14,11 +17,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49680E2F28C0B44A00AA78C4 /* AvocadosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvocadosView.swift; sourceTree = "<group>"; };
+		49680E3128C0B46000AA78C4 /* RipeningStagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipeningStagesView.swift; sourceTree = "<group>"; };
+		49680E3328C0B47700AA78C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4998492D28BFBEF900C08EE7 /* Avocados.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avocados.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4998493028BFBEF900C08EE7 /* AvocadosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvocadosApp.swift; sourceTree = "<group>"; };
 		4998493228BFBEF900C08EE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4998493428BFBEFB00C08EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4998493728BFBEFB00C08EE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49AF4FFE28C0B1C300C61F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,9 +39,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49680E2D28C0B42E00AA78C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		49680E2E28C0B43100AA78C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4968BA0128BFC3E700F7BD65 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4998493028BFBEF900C08EE7 /* AvocadosApp.swift */,
+				4998493228BFBEF900C08EE7 /* ContentView.swift */,
+				49680E2F28C0B44A00AA78C4 /* AvocadosView.swift */,
+				49680E3128C0B46000AA78C4 /* RipeningStagesView.swift */,
+				49680E3328C0B47700AA78C4 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -58,10 +84,11 @@
 		4998492F28BFBEF900C08EE7 /* Avocados */ = {
 			isa = PBXGroup;
 			children = (
-				4998493028BFBEF900C08EE7 /* AvocadosApp.swift */,
-				4998493228BFBEF900C08EE7 /* ContentView.swift */,
-				4998493428BFBEFB00C08EE7 /* Assets.xcassets */,
 				4968BA0128BFC3E700F7BD65 /* View */,
+				49680E2E28C0B43100AA78C4 /* Model */,
+				49680E2D28C0B42E00AA78C4 /* Data */,
+				49AF4FFE28C0B1C300C61F98 /* Info.plist */,
+				4998493428BFBEFB00C08EE7 /* Assets.xcassets */,
 				4998493628BFBEFB00C08EE7 /* Preview Content */,
 			);
 			path = Avocados;
@@ -145,8 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49680E3428C0B47700AA78C4 /* SettingsView.swift in Sources */,
 				4998493328BFBEF900C08EE7 /* ContentView.swift in Sources */,
+				49680E3228C0B46000AA78C4 /* RipeningStagesView.swift in Sources */,
 				4998493128BFBEF900C08EE7 /* AvocadosApp.swift in Sources */,
+				49680E3028C0B44A00AA78C4 /* AvocadosView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +307,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Avocados/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Avocados/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,6 +337,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Avocados/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Avocados/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
