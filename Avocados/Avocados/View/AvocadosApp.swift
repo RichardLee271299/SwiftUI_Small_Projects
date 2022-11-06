@@ -34,8 +34,8 @@ struct AvocadosApp: App {
                   Text("Settings")
                }
          }
-         .edgesIgnoringSafeArea(.top)
-         .accentColor(.primary)
+//         .edgesIgnoringSafeArea(.top)
+         .accentColor(Color.primary)
       }
    }
 }

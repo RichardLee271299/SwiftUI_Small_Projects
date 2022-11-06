@@ -11,6 +11,9 @@ struct RecipeCardView: View {
     //MARK: - Properties
     
     var recipe: Recipe
+    var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
+    
+    @State private var showModel = false
     
     var body: some View {
         
@@ -27,7 +30,7 @@ struct RecipeCardView: View {
                                 .font(Font.title.weight(.light))
                                 .foregroundColor(.white)
                                 .imageScale(.small)
-                                .shadow(color: Color("ColorBlackTransparentLignt"), radius: 2, x: 0, y: 0)
+                                .shadow(color: Color("ColorBlackTransparentLight"), radius: 2, x: 0, y: 0)
                                 .padding(.trailing, 20)
                                 .padding(.top, 22)
                             Spacer()
@@ -58,7 +61,14 @@ struct RecipeCardView: View {
         }
         .background(.white)
         .cornerRadius(12)
-        .shadow(color: Color("ColorBlackTransparentLignt"), radius: 8, x: 0, y: 0)
+        .shadow(color: Color("ColorBlackTransparentLight"), radius: 8, x: 0, y: 0)
+        .onTapGesture {
+            self.hapticImpact.impactOccurred()
+            self.showModel = true
+        }
+        .sheet(isPresented: self.$showModel) {
+            RecipeDetailView(recipe: self.recipe)
+        }
     }
 }
 
