@@ -9,12 +9,13 @@ import SwiftUI
 
 struct RipeningView: View {
     //MARK: - Properties
+    var ripening: Ripening
     
     @State private var slideInAnimation = false
     
     var body: some View {
         VStack {
-            Image("avocado-ripening-1")
+            Image(ripening.image)
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
                 .clipShape(Circle())
@@ -25,7 +26,7 @@ struct RipeningView: View {
                 )
                 .background(
                     Circle()
-                        .fill(Color("ColorAppearanceAdaprive"))
+                        .fill(Color("ColorAppearanceAdaptive"))
                         .frame(width: 120, height: 120, alignment: .center)
                 )
                 .zIndex(1)
@@ -35,7 +36,7 @@ struct RipeningView: View {
             VStack(alignment: .center, spacing: 10) {
                 //stage
                 VStack(alignment: .center, spacing: 10) {
-                    Text("1")
+                    Text(ripening.stage)
                         .font(.system(.largeTitle, design: .serif))
                         .fontWeight(.bold)
                     Text("Stage")
@@ -47,7 +48,7 @@ struct RipeningView: View {
                 .frame(width: 180)
                 
                 //title
-                Text("Hard")
+                Text(ripening.title)
                     .font(.system(.title, design: .serif))
                     .fontWeight(.bold)
                     .foregroundColor(Color("ColorGreenMedium"))
@@ -61,13 +62,14 @@ struct RipeningView: View {
                     )
                 //description
                 Spacer()
-                Text("fresh off the three")
+                Text(ripening.description)
                     .foregroundColor(Color("ColorGreenDark"))
                     .fontWeight(.bold)
                     .lineLimit(nil)
                 Spacer()
+                
                 //ripeness
-                Text("5+ days")
+                Text(ripening.ripeness.uppercased())
                     .foregroundColor(.white)
                     .font(.system(.callout, design: .serif))
                     .fontWeight(.bold)
@@ -80,8 +82,9 @@ struct RipeningView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorGreenMedium"), Color("ColorGreenDark")]), startPoint: .top, endPoint: .bottom))
                             .shadow(color: Color("ColorBlackTransparentLight"), radius: 6, x: 0, y: 6)
                     )
+                
                 //instruction
-                Text("hold avocados at room")
+                Text(ripening.instruction)
                     .font(.footnote)
                     .foregroundColor(Color("ColorGreenLight"))
                     .fontWeight(.bold)
@@ -106,6 +109,6 @@ struct RipeningView: View {
 
 struct RipeningView_Previews: PreviewProvider {
     static var previews: some View {
-        RipeningView()
+        RipeningView(ripening: ripeningData[1])
     }
 }
