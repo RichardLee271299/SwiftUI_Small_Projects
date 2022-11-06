@@ -27,9 +27,9 @@ struct RecipeCardView: View {
                                 .font(Font.title.weight(.light))
                                 .foregroundColor(.white)
                                 .imageScale(.small)
-                            .shadow(color: Color("ColorBlackTransparentLignt"), radius: 2, x: 0, y: 0)
-                            .padding(.trailing, 20)
-                            .padding(.top, 22)
+                                .shadow(color: Color("ColorBlackTransparentLignt"), radius: 2, x: 0, y: 0)
+                                .padding(.trailing, 20)
+                                .padding(.top, 22)
                             Spacer()
                         }
                     }
@@ -48,31 +48,10 @@ struct RecipeCardView: View {
                     .foregroundColor(.gray)
                     .italic()
                 //rates
-                HStack(alignment: .center, spacing: 5) {
-                    ForEach(0 ..< recipe.rating) { _ in
-                        Image(systemName: "star.fill")
-                            .font(.body)
-                        .foregroundColor(.yellow)
-                    }
-                }
+                RecipeRatingView(recipe: recipe)
                 
                 //cooking
-                HStack(alignment: .center, spacing: 12) {
-                    HStack(alignment: .center, spacing: 2) {
-                        Image(systemName: "person.2")
-                        Text("Service: \(recipe.serves)")
-                    }
-                    HStack(alignment: .center, spacing: 2) {
-                        Image(systemName: "clock")
-                        Text("Prep: \(recipe.preparation)")
-                    }
-                    HStack(alignment: .center, spacing: 2) {
-                        Image(systemName: "flame")
-                        Text("Cooking: \(recipe.cooking)")
-                    }
-                }
-                .font(.footnote)
-                .foregroundColor(.gray)
+                RecipeCookingVIew(recipe: recipe)
             }
             .padding()
             .padding(.bottom, 12)
