@@ -19,6 +19,9 @@
 		49EE11C929193DA100C0A53D /* spin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49EE11C129193DA100C0A53D /* spin.mp3 */; };
 		49EE11CA29193DA100C0A53D /* casino-chips.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49EE11C229193DA100C0A53D /* casino-chips.mp3 */; };
 		49EE11CB29193DA100C0A53D /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49EE11C329193DA100C0A53D /* chimeup.mp3 */; };
+		49EE11D029193F6000C0A53D /* LogoVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE11CF29193F6000C0A53D /* LogoVIew.swift */; };
+		49EE11D229193F8F00C0A53D /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE11D129193F8F00C0A53D /* Modifiers.swift */; };
+		49EE11D42919420500C0A53D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE11D32919420400C0A53D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		49EE11C129193DA100C0A53D /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
 		49EE11C229193DA100C0A53D /* casino-chips.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "casino-chips.mp3"; sourceTree = "<group>"; };
 		49EE11C329193DA100C0A53D /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		49EE11CF29193F6000C0A53D /* LogoVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoVIew.swift; sourceTree = "<group>"; };
+		49EE11D129193F8F00C0A53D /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		49EE11D32919420400C0A53D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				49EE11B029193C5200C0A53D /* ContentView.swift */,
+				49EE11CF29193F6000C0A53D /* LogoVIew.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 		49EE11CE29193DC900C0A53D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				49EE11D129193F8F00C0A53D /* Modifiers.swift */,
+				49EE11D32919420400C0A53D /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,7 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EE11D42919420500C0A53D /* Extensions.swift in Sources */,
+				49EE11D229193F8F00C0A53D /* Modifiers.swift in Sources */,
 				49EE11B129193C5200C0A53D /* ContentView.swift in Sources */,
+				49EE11D029193F6000C0A53D /* LogoVIew.swift in Sources */,
 				49EE11AF29193C5200C0A53D /* Slot_MachineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
