@@ -82,7 +82,7 @@ struct ContentView: View {
                         }
                     }
                     .frame(maxWidth: 500)
-                
+                    
                     
                     //MARK: - Spin button
                     Button {
@@ -93,14 +93,55 @@ struct ContentView: View {
                             .resizable()
                             .modifier(ImageModifier())
                     }
-
+                    
                 }
                 .layoutPriority(2)
                 
                 
                 //MARK: - Footer
                 Spacer()
+                
+                HStack {
+                    //MARK: - BET 20
+                    HStack(alignment: .center, spacing: 10) {
+                        Button {
+                            print("bet 20 coins")
+                        } label: {
+                            Text("20")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.white)
+                                .modifier(BetNumberModifier())
+                        }
+                        .modifier(BetCapsuleModifier())
+                        
+                        Image("gfx-casino-chips")
+                            .resizable()
+                            .opacity(0)
+                            .modifier(CasinoChipsModifier())
+                    }
+                    
+                    //MARK: - BET 10
+                    HStack(alignment: .center, spacing: 10) {
+                        
+                        Image("gfx-casino-chips")
+                            .resizable()
+                            .opacity(1)
+                            .modifier(CasinoChipsModifier())
+                        
+                        Button {
+                            print("bet 10 coins")
+                        } label: {
+                            Text("10")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.yellow)
+                                .modifier(BetNumberModifier())
+                        }
+                        .modifier(BetCapsuleModifier())
+                      
+                    }
+                }
             }
+            
             //MARK: - Buttons
             .overlay(
                 //reset
