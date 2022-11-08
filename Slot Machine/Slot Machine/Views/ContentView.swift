@@ -10,8 +10,58 @@ import SwiftUI
 
 struct ContentView: View {
     //MARK: - Properties
+    let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
+    
+    @State private var highScore: Int = 0
+    @State private var coins: Int = 100
+    @State private var betAmount: Int = 10
+    @State private var reels: Array = [0,1,2]
     @State private var showingInfoView = false
     
+    //MARK: - Funcs
+    //spin the reels
+    private func spinReels() {
+        reels = reels.map({ _ in
+            Int.random(in: 0...symbols.count - 1)
+        })
+    }
+    
+    //check the winning
+    private func checkWinnig() {
+        if reels[0] == reels[1] && reels [1] == reels[2] && reels[0] == reels[2] {
+            //player wins
+            playerWins()
+            //new highscore
+            if coins > highScore {
+                newHighscore()
+            }
+            
+        } else {
+            //player loses
+            playerLoses()
+        }
+        
+       
+    }
+    
+    private func playerWins() {
+        coins += betAmount * 10
+    }
+    
+    private func newHighscore() {
+        highScore = coins
+    }
+    
+    private func playerLoses() {
+        coins -= betAmount
+    }
+    
+    //game is over
+
+ 
+    
+    
+    //MARK: - Body
     var body: some View {
         ZStack {
             //MARK: - Background
@@ -30,7 +80,7 @@ struct ContentView: View {
                             .scoreLabelStyle()
                             .multilineTextAlignment(.trailing)
                         
-                        Text("100")
+                        Text("\(coins)")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
                     }
@@ -39,7 +89,7 @@ struct ContentView: View {
                     Spacer()
                     
                     HStack {
-                        Text("200")
+                        Text("\(highScore)")
                             .scoreNumberStyle()
                             .modifier(ScoreNumberModifier())
                         
@@ -57,7 +107,7 @@ struct ContentView: View {
                     //MARK: - Reel 1
                     ZStack {
                         ReelView()
-                        Image("gfx-bell")
+                        Image(symbols[reels[0]])
                             .resizable()
                             .modifier(ImageModifier())
                     }
@@ -66,7 +116,7 @@ struct ContentView: View {
                         //MARK: - Reel 2
                         ZStack {
                             ReelView()
-                            Image("gfx-seven")
+                            Image(symbols[reels[1]])
                                 .resizable()
                                 .modifier(ImageModifier())
                         }
@@ -76,7 +126,7 @@ struct ContentView: View {
                         //MARK: - Reel 3
                         ZStack {
                             ReelView()
-                            Image("gfx-cherry")
+                            Image(symbols[reels[2]])
                                 .resizable()
                                 .modifier(ImageModifier())
                         }
@@ -86,7 +136,11 @@ struct ContentView: View {
                     
                     //MARK: - Spin button
                     Button {
-                        print("SPin")
+                        self.spinReels()
+                        
+                        //Check win
+                        self.checkWinnig()
+                        
                     } label: {
                         Image("gfx-spin")
                             .renderingMode(.original)
