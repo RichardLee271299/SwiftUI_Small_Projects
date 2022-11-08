@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var showingInfoView = false
     @State private var isActiveBet10 = true
     @State private var isActiveBet20 = false
+    @State private var showingModal = false
     
     //MARK: - Funcs
     //spin the reels
@@ -43,7 +44,7 @@ struct ContentView: View {
             playerLoses()
         }
         
-       
+        
     }
     
     private func playerWins() {
@@ -71,8 +72,13 @@ struct ContentView: View {
     }
     
     //game is over
-
- 
+    func isGameOver() {
+        if coins <= 0 {
+            //show modal window
+            showingModal = true
+        }
+    }
+    
     
     
     //MARK: - Body
@@ -155,6 +161,9 @@ struct ContentView: View {
                         //Check win
                         self.checkWinnig()
                         
+                        //game is over
+                        self.isGameOver()
+                        
                     } label: {
                         Image("gfx-spin")
                             .renderingMode(.original)
@@ -205,7 +214,7 @@ struct ContentView: View {
                                 .modifier(BetNumberModifier())
                         }
                         .modifier(BetCapsuleModifier())
-                      
+                        
                     }
                 }
             }
@@ -233,8 +242,69 @@ struct ContentView: View {
             )
             .padding()
             .frame(maxWidth: 720)
+            .blur(radius: $showingModal.wrappedValue ? 5 : 0, opaque: false)
             
             //MARK: - Popup
+            if $showingModal.wrappedValue {
+                ZStack {
+                    Color("ColorTransparentBlack").edgesIgnoringSafeArea(.all)
+                    
+                    //mofal
+                    VStack(spacing:0) {
+                        //title
+                        Text("Game Over".uppercased())
+                            .font(.system(.title, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding()
+                            .frame(minWidth:0, maxWidth: .infinity)
+                            .background(Color("ColorPink"))
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        //Message
+                        
+                        VStack(alignment: .center, spacing: 16) {
+                            Image("gfx-seven-reel")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxHeight:72)
+                            
+                            Text("Bad luck! You lost all of the coins. \nLet's play again!")
+                                .font(.system(.body, design: .rounded))
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.gray)
+                                .layoutPriority(1)
+                            
+                            Button {
+                                self.showingModal = false
+                                self.coins = 100
+                            } label: {
+                                Text("New game".uppercased())
+                                    .font(.system(.body, design: .rounded))
+                                    .fontWeight(.semibold)
+                                    .accentColor(Color("ColorPink"))
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .frame(minWidth: 128)
+                                    .background(
+                                        Capsule()
+                                            .strokeBorder(lineWidth: 1.75)
+                                            .foregroundColor(Color("ColorPink"))
+                                    )
+                            }
+                            
+                        }
+                        
+                        Spacer()
+                    }
+                    .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 260, idealHeight: 280, maxHeight: 320, alignment: .center)
+                    .background(.white)
+                    .cornerRadius(20)
+                    .shadow(color: Color("ColorTransparentBlack"), radius: 6, x: 0, y: 8)
+                    
+                }
+            }
             
         }
         .sheet(isPresented: $showingInfoView) {
