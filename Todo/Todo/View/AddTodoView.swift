@@ -9,13 +9,17 @@ import SwiftUI
 
 struct AddTodoView: View {
     //MARK: - Properties
-    
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
     @State private var name: String = ""
     @State private var priority: String = "Normal"
     
     let priorities = ["High", "Normal", "Low"]
+    
+    @State private var errorShowing: Bool = false
+    @State private var errorTitle:String = ""
+    @State private var errorMessage: String = ""
     
     //MARK: - Body
     var body: some View {
@@ -35,7 +39,25 @@ struct AddTodoView: View {
                     
                     //MARK: - Save button
                     Button {
-                        print("Save todo")
+                        
+                        if self.name != "" {
+                            let todo = TodoItem(context: self.managedObjectContext)
+                            todo.name = self.name
+                            todo.priority = self.priority
+                            
+                            do {
+                                try self.managedObjectContext.save()
+                                print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
+                            } catch {
+                                print(error)
+                            }
+                        } else {
+                            self.errorShowing = true
+                            self.errorTitle = "Invalid Name"
+                            self.errorMessage = "Make sure to enter something for\nthe new todo item"
+                            return
+                        }
+                        self.presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Save")
                     }
@@ -53,6 +75,9 @@ struct AddTodoView: View {
                     }
 
                 }
+            }
+            .alert(isPresented: $errorShowing) {
+                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
         } //: NAVIGATION
     }

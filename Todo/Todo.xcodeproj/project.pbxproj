@@ -13,6 +13,7 @@
 		491BD1252936857300D713AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491BD1242936857300D713AB /* Preview Assets.xcassets */; };
 		491BD12A2936857300D713AB /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491BD1282936857300D713AB /* Todo.xcdatamodeld */; };
 		491BD1322936859600D713AB /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BD1312936859600D713AB /* AddTodoView.swift */; };
+		49BD504D2938B6C000D4D18C /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD504C2938B6C000D4D18C /* PersistanceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		491BD1242936857300D713AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		491BD1292936857300D713AB /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 		491BD1312936859600D713AB /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		49BD504C2938B6C000D4D18C /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				491BD11D2936857100D713AB /* TodoApp.swift */,
+				49BD502A2938AD8C00D4D18C /* Data */,
 				491BD1302936857C00D713AB /* View */,
 				491BD1282936857300D713AB /* Todo.xcdatamodeld */,
 				491BD1212936857300D713AB /* Assets.xcassets */,
@@ -79,6 +82,14 @@
 				491BD1312936859600D713AB /* AddTodoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49BD502A2938AD8C00D4D18C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				49BD504C2938B6C000D4D18C /* PersistanceController.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BD504D2938B6C000D4D18C /* PersistanceController.swift in Sources */,
 				491BD1202936857100D713AB /* ContentView.swift in Sources */,
 				491BD11E2936857100D713AB /* TodoApp.swift in Sources */,
 				491BD12A2936857300D713AB /* Todo.xcdatamodeld in Sources */,
