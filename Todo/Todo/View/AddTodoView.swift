@@ -25,10 +25,14 @@ struct AddTodoView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Form {
+                VStack(alignment: .leading, spacing: 20) {
                     //MARK: - ToDo name
                     TextField("Todo", text: $name)
-                    
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemFill))
+                        .cornerRadius(9)
+                        .font(.system(size:24, weight: .bold, design: .default))
+                        
                     //MARK: - Todo priority
                     Picker("Priority", selection: $priority) {
                         ForEach(priorities, id: \.self) {
@@ -39,7 +43,6 @@ struct AddTodoView: View {
                     
                     //MARK: - Save button
                     Button {
-                        
                         if self.name != "" {
                             let todo = TodoItem(context: self.managedObjectContext)
                             todo.name = self.name
@@ -47,7 +50,7 @@ struct AddTodoView: View {
                             
                             do {
                                 try self.managedObjectContext.save()
-                                print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
+                               
                             } catch {
                                 print(error)
                             }
@@ -60,9 +63,17 @@ struct AddTodoView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Save")
-                    }
-
-                }
+                            .font(.system(size:24, weight: .bold, design: .default))
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(.blue)
+                            .cornerRadius(9)
+                            .foregroundColor(.white)
+                    }//:SAVE BUTTON
+                }//:VSTACK
+                .padding(.horizontal)
+                .padding(.vertical, 30)
+                
                 Spacer()
             }//: VStack
             .navigationBarTitle("New Todo", displayMode: .inline)

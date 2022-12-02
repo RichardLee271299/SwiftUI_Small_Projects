@@ -15,6 +15,7 @@ struct ContentView: View {
     @FetchRequest(entity: TodoItem.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \TodoItem.name, ascending: true)]) var todos: FetchedResults<TodoItem>
     
     @State private var showingAddTodoView = false
+    @State private var animatingButton = false
     
     //MARK: - Body
     var body: some View {
@@ -54,6 +55,42 @@ struct ContentView: View {
                     EmptyListView()
                 }
             }//:ZSTACK
+            .sheet(isPresented: $showingAddTodoView) {
+                AddTodoView().environment(\.managedObjectContext, self.managedObjectContext)
+            }
+            .overlay(alignment: .bottomTrailing) {
+                ZStack {
+                    Group {
+                        Circle()
+                            .fill(.blue)
+                            .opacity(self.animatingButton ? 0.2 : 0)
+                            .scaleEffect(self.animatingButton ? 1: 0)
+                            .frame(width: 68, height: 68, alignment: .center)
+                        Circle()
+                            .fill(.blue)
+                            .opacity(self.animatingButton ? 0.15 : 0)
+                            .scaleEffect(self.animatingButton ? 1 : 0)
+                            .frame(width: 88, height: 88, alignment: .center)
+                    }
+                    .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true))
+
+                    Button {
+                        self.showingAddTodoView.toggle()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .background(Circle().fill(Color("ColorBase")))
+                            .frame(width: 48,height: 48,alignment: .center)
+                    }//BUTTON
+                    .onAppear {
+                        self.animatingButton = true
+                    }
+                    
+                }//ZSATCK
+                .padding(.bottom, 15)
+                .padding(.trailing, 15)
+            }
         }//:NAVIGATION
     }
     
