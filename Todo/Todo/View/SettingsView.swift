@@ -12,9 +12,15 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var iconSettings: IconNames
     
+    //Theme
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings.shared
+    @State private var isThemeChanged = false
+    
     //MARK: - Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
+            
             VStack(alignment: .center) {
                 //MARK: - Form
                 Form {
@@ -71,6 +77,39 @@ struct SettingsView: View {
                     } //: SECTION 1
                       .padding(.vertical, 3)
                     
+                    //MARK: - Section 2
+                    Section {
+                        List {
+                            ForEach(themes, id:\.id) { item in
+                                Button {
+                                    self.theme.themeSettings = item.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                    self.isThemeChanged.toggle()
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "circle.fill")
+                                            .foregroundColor(item.themeColor)
+                                        
+                                        Text(item.themeName)
+                                    }
+                                }//BUTTON
+                                .tint(.primary)
+                            }
+                        }
+                    } header: {
+                        HStack {
+                            Text("Choose the app theme")
+                            Image(systemName: "circle.fill")
+                                .resizable()
+                                .frame(width: 10, height: 10)
+                                .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                        }
+                    }
+                    .padding(.vertical, 3)
+                    .alert(isPresented: $isThemeChanged) {
+                        Alert(title: Text("SUCCESS!"), message: Text("App has been changed to the \(themes[self.theme.themeSettings].themeName). Now close and restart it!"), dismissButton: .default(Text("OK")))
+                    }
+                    
                     //MARK: - Section 3
                     Section {
                         FormRowLinkView(icon: "globe", color: .pink, text: "Website", link: "https://swiftuimasterclass.com")
@@ -121,7 +160,8 @@ struct SettingsView: View {
                 }
             }
         }//NAVIGATION VIEW
-
+        .tint(themes[self.theme.themeSettings].themeColor)
+        
         
     }
 }

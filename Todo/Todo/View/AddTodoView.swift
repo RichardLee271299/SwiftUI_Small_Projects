@@ -21,9 +21,13 @@ struct AddTodoView: View {
     @State private var errorTitle:String = ""
     @State private var errorMessage: String = ""
     
+    //MARK: - Theme
+    @ObservedObject var theme = ThemeSettings.shared
+    var themes:[Theme] = themeData
+    
     //MARK: - Body
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack(alignment: .leading, spacing: 20) {
                     //MARK: - ToDo name
@@ -66,7 +70,7 @@ struct AddTodoView: View {
                             .font(.system(size:24, weight: .bold, design: .default))
                             .padding()
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(.blue)
+                            .background(themes[self.theme.themeSettings].themeColor)
                             .cornerRadius(9)
                             .foregroundColor(.white)
                     }//:SAVE BUTTON
@@ -91,6 +95,7 @@ struct AddTodoView: View {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
         } //: NAVIGATION
+        .tint(themes[self.theme.themeSettings].themeColor)
     }
     
 }

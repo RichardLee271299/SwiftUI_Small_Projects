@@ -13,6 +13,9 @@
 		491BD1252936857300D713AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491BD1242936857300D713AB /* Preview Assets.xcassets */; };
 		491BD12A2936857300D713AB /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 491BD1282936857300D713AB /* Todo.xcdatamodeld */; };
 		491BD1322936859600D713AB /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BD1312936859600D713AB /* AddTodoView.swift */; };
+		495003A8293B903C0010BCAA /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495003A7293B903C0010BCAA /* ThemeModel.swift */; };
+		495003AA293B906F0010BCAA /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495003A9293B906F0010BCAA /* ThemeData.swift */; };
+		495003AC293B90C50010BCAA /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495003AB293B90C50010BCAA /* ThemeSettings.swift */; };
 		495CA40E293A77A9005B6A21 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA40D293A77A9005B6A21 /* EmptyListView.swift */; };
 		495CA410293B5BA6005B6A21 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA40F293B5BA6005B6A21 /* SettingsView.swift */; };
 		495CA412293B5F2E005B6A21 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA411293B5F2E005B6A21 /* FormRowStaticView.swift */; };
@@ -30,6 +33,9 @@
 		491BD1242936857300D713AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		491BD1292936857300D713AB /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 		491BD1312936859600D713AB /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		495003A7293B903C0010BCAA /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		495003A9293B906F0010BCAA /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
+		495003AB293B90C50010BCAA /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		495CA40D293A77A9005B6A21 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		495CA40F293B5BA6005B6A21 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		495CA411293B5F2E005B6A21 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 		491BD11C2936857100D713AB /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				495003A5293B90240010BCAA /* Theme */,
 				495CA415293B6CA9005B6A21 /* Info.plist */,
 				495CA416293B6D3F005B6A21 /* Icons */,
 				491BD11D2936857100D713AB /* TodoApp.swift */,
@@ -102,6 +109,16 @@
 				495CA413293B6118005B6A21 /* FormRowLinkView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		495003A5293B90240010BCAA /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				495003A7293B903C0010BCAA /* ThemeModel.swift */,
+				495003A9293B906F0010BCAA /* ThemeData.swift */,
+				495003AB293B90C50010BCAA /* ThemeSettings.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		49BD502A2938AD8C00D4D18C /* Data */ = {
@@ -184,8 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				495CA410293B5BA6005B6A21 /* SettingsView.swift in Sources */,
+				495003AC293B90C50010BCAA /* ThemeSettings.swift in Sources */,
 				495CA412293B5F2E005B6A21 /* FormRowStaticView.swift in Sources */,
 				495CA414293B6118005B6A21 /* FormRowLinkView.swift in Sources */,
+				495003AA293B906F0010BCAA /* ThemeData.swift in Sources */,
+				495003A8293B903C0010BCAA /* ThemeModel.swift in Sources */,
 				495CA419293B7280005B6A21 /* AlternateIcons.swift in Sources */,
 				49BD504D2938B6C000D4D18C /* PersistanceController.swift in Sources */,
 				491BD1202936857100D713AB /* ContentView.swift in Sources */,
