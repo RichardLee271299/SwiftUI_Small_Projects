@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
+    @EnvironmentObject var iconSettings: IconNames
+    
     @FetchRequest(entity: TodoItem.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \TodoItem.name, ascending: true)]) var todos: FetchedResults<TodoItem>
     
     @State private var showingSettingsView = false
@@ -45,7 +47,7 @@ struct ContentView: View {
                                 .imageScale(.large)
                         }//: ADD BUTTON
                         .sheet(isPresented: $showingSettingsView) {
-                            SettingsView()
+                            SettingsView().environmentObject(self.iconSettings )
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {

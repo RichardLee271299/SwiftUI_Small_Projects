@@ -17,6 +17,8 @@
 		495CA410293B5BA6005B6A21 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA40F293B5BA6005B6A21 /* SettingsView.swift */; };
 		495CA412293B5F2E005B6A21 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA411293B5F2E005B6A21 /* FormRowStaticView.swift */; };
 		495CA414293B6118005B6A21 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA413293B6118005B6A21 /* FormRowLinkView.swift */; };
+		495CA417293B6D3F005B6A21 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 495CA416293B6D3F005B6A21 /* Icons */; };
+		495CA419293B7280005B6A21 /* AlternateIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA418293B7280005B6A21 /* AlternateIcons.swift */; };
 		49BD504D2938B6C000D4D18C /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD504C2938B6C000D4D18C /* PersistanceController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,9 @@
 		495CA40F293B5BA6005B6A21 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		495CA411293B5F2E005B6A21 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		495CA413293B6118005B6A21 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
+		495CA415293B6CA9005B6A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		495CA416293B6D3F005B6A21 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
+		495CA418293B7280005B6A21 /* AlternateIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternateIcons.swift; sourceTree = "<group>"; };
 		49BD504C2938B6C000D4D18C /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +70,10 @@
 		491BD11C2936857100D713AB /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				495CA415293B6CA9005B6A21 /* Info.plist */,
+				495CA416293B6D3F005B6A21 /* Icons */,
 				491BD11D2936857100D713AB /* TodoApp.swift */,
+				495CA418293B7280005B6A21 /* AlternateIcons.swift */,
 				49BD502A2938AD8C00D4D18C /* Data */,
 				491BD1302936857C00D713AB /* View */,
 				491BD1282936857300D713AB /* Todo.xcdatamodeld */,
@@ -162,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495CA417293B6D3F005B6A21 /* Icons in Resources */,
 				491BD1252936857300D713AB /* Preview Assets.xcassets in Resources */,
 				491BD1222936857300D713AB /* Assets.xcassets in Resources */,
 			);
@@ -177,6 +186,7 @@
 				495CA410293B5BA6005B6A21 /* SettingsView.swift in Sources */,
 				495CA412293B5F2E005B6A21 /* FormRowStaticView.swift in Sources */,
 				495CA414293B6118005B6A21 /* FormRowLinkView.swift in Sources */,
+				495CA419293B7280005B6A21 /* AlternateIcons.swift in Sources */,
 				49BD504D2938B6C000D4D18C /* PersistanceController.swift in Sources */,
 				491BD1202936857100D713AB /* ContentView.swift in Sources */,
 				495CA40E293A77A9005B6A21 /* EmptyListView.swift in Sources */,
@@ -314,6 +324,7 @@
 				DEVELOPMENT_TEAM = D3CL5249J7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +354,7 @@
 				DEVELOPMENT_TEAM = D3CL5249J7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Todo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
