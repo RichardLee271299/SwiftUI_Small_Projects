@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @FetchRequest(entity: TodoItem.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \TodoItem.name, ascending: true)]) var todos: FetchedResults<TodoItem>
     
+    @State private var showingSettingsView = false
     @State private var showingAddTodoView = false
     @State private var animatingButton = false
     
@@ -32,18 +33,19 @@ struct ContentView: View {
                         }
                     }//: FOREACH
                     .onDelete(perform: deleteTodo(at:))
-                } //: LIST 
+                } //: LIST
                 .navigationTitle("Todo")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            self.showingAddTodoView.toggle()
+                            self.showingSettingsView.toggle()
                         } label: {
-                            Image(systemName: "plus")
+                            Image(systemName: "paintbrush")
+                                .imageScale(.large)
                         }//: ADD BUTTON
-                        .sheet(isPresented: $showingAddTodoView) {
-                            AddTodoView().environment(\.managedObjectContext, self.managedObjectContext)
+                        .sheet(isPresented: $showingSettingsView) {
+                            SettingsView()
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
