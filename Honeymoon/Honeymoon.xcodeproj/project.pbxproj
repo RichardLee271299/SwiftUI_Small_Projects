@@ -12,6 +12,9 @@
 		494216312943983F0084930D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494216302943983F0084930D /* Assets.xcassets */; };
 		494216342943983F0084930D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494216332943983F0084930D /* Preview Assets.xcassets */; };
 		4942163B2943996D0084930D /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 4942163A2943996D0084930D /* Sounds */; };
+		49DA68D12944D807005F655F /* HoneymoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D02944D807005F655F /* HoneymoonModel.swift */; };
+		49DA68D42944D842005F655F /* HoneymoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D32944D842005F655F /* HoneymoonData.swift */; };
+		49DA68D92944D8C2005F655F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D82944D8C2005F655F /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		494216302943983F0084930D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494216332943983F0084930D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4942163A2943996D0084930D /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		49DA68D02944D807005F655F /* HoneymoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonModel.swift; sourceTree = "<group>"; };
+		49DA68D32944D842005F655F /* HoneymoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonData.swift; sourceTree = "<group>"; };
+		49DA68D82944D8C2005F655F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +59,12 @@
 		4942162B2943983E0084930D /* Honeymoon */ = {
 			isa = PBXGroup;
 			children = (
-				4942163A2943996D0084930D /* Sounds */,
-				4942162C2943983E0084930D /* HoneymoonApp.swift */,
-				4942162E2943983E0084930D /* ContentView.swift */,
+				49DA68D52944D844005F655F /* Data */,
+				49DA68D22944D80C005F655F /* Model */,
+				49DA68D72944D8AE005F655F /* App */,
+				49DA68D62944D8A5005F655F /* View */,
 				494216302943983F0084930D /* Assets.xcassets */,
+				4942163A2943996D0084930D /* Sounds */,
 				494216322943983F0084930D /* Preview Content */,
 			);
 			path = Honeymoon;
@@ -68,6 +76,39 @@
 				494216332943983F0084930D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49DA68D22944D80C005F655F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49DA68D02944D807005F655F /* HoneymoonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49DA68D52944D844005F655F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				49DA68D32944D842005F655F /* HoneymoonData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		49DA68D62944D8A5005F655F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4942162E2943983E0084930D /* ContentView.swift */,
+				49DA68D82944D8C2005F655F /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49DA68D72944D8AE005F655F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4942162C2943983E0084930D /* HoneymoonApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DA68D42944D842005F655F /* HoneymoonData.swift in Sources */,
+				49DA68D12944D807005F655F /* HoneymoonModel.swift in Sources */,
 				4942162F2943983E0084930D /* ContentView.swift in Sources */,
 				4942162D2943983E0084930D /* HoneymoonApp.swift in Sources */,
+				49DA68D92944D8C2005F655F /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
