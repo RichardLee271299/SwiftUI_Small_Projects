@@ -18,7 +18,7 @@ struct HeaderComponent: View {
             Image("logo-honeymoon")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 28)
+                .frame(height: 28)
         }
     }
 }

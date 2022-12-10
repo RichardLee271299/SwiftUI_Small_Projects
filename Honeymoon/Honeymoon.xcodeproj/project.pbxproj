@@ -19,6 +19,7 @@
 		49DA68DD2944E1CC005F655F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DC2944E1CC005F655F /* FooterView.swift */; };
 		49DA68E02944E318005F655F /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DF2944E318005F655F /* HeaderComponent.swift */; };
 		49DA68E22944E396005F655F /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68E12944E396005F655F /* GuideComponent.swift */; };
+		49DA68E42944E503005F655F /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68E32944E503005F655F /* GuideView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		49DA68DC2944E1CC005F655F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		49DA68DF2944E318005F655F /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
 		49DA68E12944E396005F655F /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
+		49DA68E32944E503005F655F /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				4942162E2943983E0084930D /* ContentView.swift */,
+				49DA68E32944E503005F655F /* GuideView.swift */,
 				49DA68DA2944E098005F655F /* HeaderView.swift */,
 				49DA68DC2944E1CC005F655F /* FooterView.swift */,
 				49DA68D82944D8C2005F655F /* CardView.swift */,
@@ -211,6 +214,7 @@
 				4942162D2943983E0084930D /* HoneymoonApp.swift in Sources */,
 				49DA68D92944D8C2005F655F /* CardView.swift in Sources */,
 				49DA68E22944E396005F655F /* GuideComponent.swift in Sources */,
+				49DA68E42944E503005F655F /* GuideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
