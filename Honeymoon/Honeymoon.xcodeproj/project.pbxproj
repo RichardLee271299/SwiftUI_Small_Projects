@@ -17,6 +17,8 @@
 		49DA68D92944D8C2005F655F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D82944D8C2005F655F /* CardView.swift */; };
 		49DA68DB2944E098005F655F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DA2944E098005F655F /* HeaderView.swift */; };
 		49DA68DD2944E1CC005F655F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DC2944E1CC005F655F /* FooterView.swift */; };
+		49DA68E02944E318005F655F /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DF2944E318005F655F /* HeaderComponent.swift */; };
+		49DA68E22944E396005F655F /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68E12944E396005F655F /* GuideComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		49DA68D82944D8C2005F655F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		49DA68DA2944E098005F655F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		49DA68DC2944E1CC005F655F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		49DA68DF2944E318005F655F /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
+		49DA68E12944E396005F655F /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		4942162B2943983E0084930D /* Honeymoon */ = {
 			isa = PBXGroup;
 			children = (
+				49DA68DE2944E306005F655F /* Component */,
 				49DA68D52944D844005F655F /* Data */,
 				49DA68D22944D80C005F655F /* Model */,
 				49DA68D72944D8AE005F655F /* App */,
@@ -115,6 +120,15 @@
 				4942162C2943983E0084930D /* HoneymoonApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		49DA68DE2944E306005F655F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				49DA68DF2944E318005F655F /* HeaderComponent.swift */,
+				49DA68E12944E396005F655F /* GuideComponent.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +206,11 @@
 				49DA68DD2944E1CC005F655F /* FooterView.swift in Sources */,
 				49DA68DB2944E098005F655F /* HeaderView.swift in Sources */,
 				49DA68D12944D807005F655F /* HoneymoonModel.swift in Sources */,
+				49DA68E02944E318005F655F /* HeaderComponent.swift in Sources */,
 				4942162F2943983E0084930D /* ContentView.swift in Sources */,
 				4942162D2943983E0084930D /* HoneymoonApp.swift in Sources */,
 				49DA68D92944D8C2005F655F /* CardView.swift in Sources */,
+				49DA68E22944E396005F655F /* GuideComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
