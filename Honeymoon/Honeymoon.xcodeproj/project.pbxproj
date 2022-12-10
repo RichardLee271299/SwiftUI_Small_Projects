@@ -16,6 +16,7 @@
 		49DA68D42944D842005F655F /* HoneymoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D32944D842005F655F /* HoneymoonData.swift */; };
 		49DA68D92944D8C2005F655F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68D82944D8C2005F655F /* CardView.swift */; };
 		49DA68DB2944E098005F655F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DA2944E098005F655F /* HeaderView.swift */; };
+		49DA68DD2944E1CC005F655F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA68DC2944E1CC005F655F /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		49DA68D32944D842005F655F /* HoneymoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonData.swift; sourceTree = "<group>"; };
 		49DA68D82944D8C2005F655F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		49DA68DA2944E098005F655F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		49DA68DC2944E1CC005F655F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				4942162E2943983E0084930D /* ContentView.swift */,
 				49DA68DA2944E098005F655F /* HeaderView.swift */,
+				49DA68DC2944E1CC005F655F /* FooterView.swift */,
 				49DA68D82944D8C2005F655F /* CardView.swift */,
 			);
 			path = View;
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DA68D42944D842005F655F /* HoneymoonData.swift in Sources */,
+				49DA68DD2944E1CC005F655F /* FooterView.swift in Sources */,
 				49DA68DB2944E098005F655F /* HeaderView.swift in Sources */,
 				49DA68D12944D807005F655F /* HoneymoonModel.swift in Sources */,
 				4942162F2943983E0084930D /* ContentView.swift in Sources */,
