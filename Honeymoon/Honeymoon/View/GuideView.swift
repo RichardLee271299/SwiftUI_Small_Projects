@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct GuideView: View {
+    //MARK: - Properties
+    @Environment(\.dismiss) var dismiss
+    
+    //MARK: - Body
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
@@ -36,7 +40,7 @@ struct GuideView: View {
                 Spacer(minLength: 10)
                 
                 Button {
-                    
+                    self.dismiss()
                 } label: {
                     Text("Continue".uppercased())
                         .font(.headline)
