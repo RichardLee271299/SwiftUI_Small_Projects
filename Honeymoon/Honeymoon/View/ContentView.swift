@@ -12,10 +12,13 @@ struct ContentView: View {
     @State var showAlert = false
     @State var showGuideView = false
     @State var showInfoView = false
+    @State private var lastCardIndex = 1
+    @State private var cardRemovalTransition = AnyTransition.trailingBottom
+    
     @GestureState private var dragState = DragState.inactive
     private let dragAreaThreshold: CGFloat = 65.0
     
-    var cardViews: [CardView] = {
+    @State var cardViews: [CardView] = {
         var views = [CardView]()
         for index in 0..<2  {
             views.append(CardView(honeymoon: honeymoonData[index]))
@@ -101,8 +104,31 @@ struct ContentView: View {
                                     break
                                 }
                             })
+                                .onChanged({ value in
+                                    guard case .second(true, let drag?) = value else  {
+                                        return
+                                    }
+                                    if drag.translation.width < -self.dragAreaThreshold {
+                                        self.cardRemovalTransition = .leadingBottom
+                                    }
+                                    
+                                    if drag.translation.width > self.dragAreaThreshold {
+                                        self.cardRemovalTransition = .trailingBottom
+                                    }
+                                })
+                                .onEnded({ value in
+                                    guard case .second(true, let drag?) = value else {
+                                        return
+                                    }
+                                    
+                                    if drag.translation.width < -self.dragAreaThreshold ||
+                                        drag.translation.width > self.dragAreaThreshold {
+                                        self.moveCards()
+                                    }
+                                })
                         )
-                        
+                        .transition(self.cardRemovalTransition)
+                    
                 }
             }
             .padding(.horizontal)
@@ -121,6 +147,18 @@ struct ContentView: View {
     
     
     //MARK: - funcs
+    private func moveCards() {
+        cardViews.removeFirst()
+        
+        self.lastCardIndex += 1
+        
+        let honeymoon = honeymoonData[lastCardIndex % honeymoonData.count]
+        
+        let newCardView = CardView(honeymoon: honeymoon)
+        
+        cardViews.append(newCardView)
+    }
+    
     private func isTopCard(cardView: CardView) -> Bool {
         guard let index = cardViews.firstIndex(where: { $0.id == cardView.id}) else {
             return false
