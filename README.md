@@ -1,7 +1,15 @@
 # SwiftUI_Small_Projects
 Learn to SwiftUI while building small apps
 
-- [Restart](Restart/)
-- [Avocados](Avocados/)
 - [Africa](Africa/)
+- [Avocados](Avocados/)
 - [Devote](Devote/)
+- [Fructus](Fructus/)
+- [Honeymoon](Honeymoon/)
+- [Notes](Notes/)
+- [Pinch](Pinch/)
+- [Restart](Restart/)
+- [Todo](Todo/)
+- [Touchdown](Touchdown/)
+- [Africa](Africa/)
+- [Slot Machine](Slot%20Machine/)
