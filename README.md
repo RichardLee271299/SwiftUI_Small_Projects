@@ -6,7 +6,7 @@ Learn to SwiftUI while building small apps
 - [Devote](Devote/)
 - [Fructus](Fructus/)
 - [Honeymoon](Honeymoon/)
-- [Notes](Notes/)
+- [Notes watchOS](Notes/)
 - [Pinch](Pinch/)
 - [Restart](Restart/)
 - [Todo](Todo/)
