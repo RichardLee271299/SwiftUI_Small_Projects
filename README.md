@@ -11,5 +11,4 @@ Learn to SwiftUI while building small apps
 - [Restart](Restart/)
 - [Todo](Todo/)
 - [Touchdown](Touchdown/)
-- [Africa](Africa/)
 - [Slot Machine](Slot%20Machine/)
